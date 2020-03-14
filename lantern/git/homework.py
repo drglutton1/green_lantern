@@ -159,8 +159,13 @@ def simple_sort(data: List[int]) -> List[list]:
         simple_sort([2, 9, 6, 7, 3, 2, 1])
         >>> [1, 2, 2, 3, 6, 7, 9]
     """
-    result_list = []
-    for x in range(len(data)):
-        result_list.append(min(data))
-        data.remove(min(data))
-    return result_list
+    random = True
+    while random:
+        random = False
+        for x in range(len(data)):
+            if x + 1 in range(len(data)):
+                if data[x] > data[x + 1]:
+                    data[x], data[x + 1] = data[x + 1], data[x]
+                    random = True
+
+    return data
