@@ -1,3 +1,5 @@
+import math
+
 class Cat:
     """
     Write Class Cat which will receive age from user
@@ -245,7 +247,7 @@ class Door:
         elif material == "metal":
             return self.door_square() * self._metal_price
         else:
-            return print("Sorry we don't have such material")
+            raise ValueError("Sorry we don't have such material")
 
     def update_wood_price(self, new_price):
         self._wood_price = new_price
@@ -319,12 +321,11 @@ class House:
         self.__door = None
 
     def create_wall(self, width, height):
-        if len(self.__walls) >= 4:
+        if len(self.__walls) > 4:
             raise ValueError("Our house can not have more than 4 walls")
-        elif width == 0 or height == 0:
+        if width == 0 or height == 0:
             raise ValueError("Value must be not 0")
-        else:
-            return self.__walls.append(Wall(width, height))
+        return self.__walls.append(Wall(width, height))
 
     def create_roof(self, width, height, roof_type):
         if self.__roof:
@@ -388,7 +389,7 @@ class House:
             total_number_of_rolls = 0
             for wall in self.__walls:
                 total_number_of_rolls += wall.number_of_rolls_of_paper(roll_length_m, roll_width_m)
-        return total_number_of_rolls
+            return total_number_of_rolls
 
     def get_room_square(self):
         return self.get_walls_square() - self.get_windows_square() - self.get_door_square()
