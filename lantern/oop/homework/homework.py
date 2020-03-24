@@ -157,8 +157,8 @@ class Wall:
       
       """
     def number_of_rolls_of_paper(self, roll_width_m, roll_length_m):
-        lines = int(self.width / roll_width_m)
-        lines_in_roll = roll_length_m / self.height
+        lines = self.width // roll_length_m
+        lines_in_roll = roll_width_m // self.height
         count_of_rolls = lines / lines_in_roll
         return count_of_rolls
 
@@ -321,7 +321,8 @@ class House:
         self.__door = None
 
     def create_wall(self, width, height):
-        if len(self.__walls) > 4:
+        print(len(self.__walls))
+        if len(self.__walls) >= 4:
             raise ValueError("Our house can not have more than 4 walls")
         if width == 0 or height == 0:
             raise ValueError("Value must be not 0")
@@ -356,16 +357,16 @@ class House:
         return len(self.__windows)
 
     def get_door_price(self, material):
-        return self.get_door_price(material)
+        return self.__door.door_price(material)
 
     def update_wood_price(self, new_wood_price):
-        return self.update_wood_price(new_wood_price)
+        return self.__door.update_wood_price(new_wood_price)
 
     def update_metal_price(self, new_metal_price):
-        return self.update_metal_price(new_metal_price)
+        return self.__door.update_metal_price(new_metal_price)
 
     def get_roof_square(self):
-        return self.get_roof_square()
+        return self.__roof.roof_square()
 
     def get_walls_square(self):
         result = 0
