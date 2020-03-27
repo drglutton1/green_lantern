@@ -374,7 +374,7 @@ class House:
             result += wall.wall_square()
         return result
 
-    def get_windows_square(self):
+    def get_windows_square(s
         result = 0
         for window in self.__windows:
             result += window.window_square()
