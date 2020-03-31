@@ -4,6 +4,16 @@ class Asteroid:
         self.y = y
 
 
+class Obstacle:
+    def __init__(self, x, y, asteroid):
+        self.asteroid = asteroid
+        self.x = x
+        self.y = y
+        self.asteroid = asteroid
+        if self.x > self.asteroid.x or self.y > self.asteroid.y:
+            raise ObstacleOutsideAsteroidError
+
+
 class Robot:
     def __init__(self, x, y, asteroid, direction):
         self.x = x

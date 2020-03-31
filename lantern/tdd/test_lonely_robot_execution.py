@@ -27,6 +27,22 @@ class TestRobotCreation:
             Robot(*robot_coordinates, asteroid, "W")
 
 
+class ObstacleCreation:
+    @pytest.mark.parametrize(
+        "asteroid_coordinates, obstacle_coordinates",
+        (
+                ((15, 25), (26, 30)),
+                ((15, 25), (26, 24)),
+                ((15, 25), (15, 27)),
+        )
+    )
+    def test_parameters(self, asteroid_coordinates, obstacle_coordinates):
+        with pytest.raises(ObstacleCreationError):
+            asteroid = Asteroid(*asteroid_coordinates)
+            Obstacle(*obstacle_coordinates, asteroid)
+
+
+
 class TestMoves:
 
     def setup(self):
@@ -91,6 +107,8 @@ class TestMoves:
         robot.move_backward()
         assert robot.x == expected_x
         assert robot.y == expected_y
+
+
 
 
 
