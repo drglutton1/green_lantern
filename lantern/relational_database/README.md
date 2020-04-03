@@ -2,7 +2,7 @@
 
 How to configure your Postgres environment
 
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04
+'https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04'
 
 Same information for those one who does not like English (yet)
 

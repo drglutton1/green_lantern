@@ -32,7 +32,11 @@ def is_two_objects_is_the_same_objects(first: Any, second: Any) -> bool:
     In another case should return False
     """
 <<<<<<< HEAD
+<<<<<<< HEAD
     return id(first) == id(second)
+=======
+    return first is second
+>>>>>>> 87768dfbca1b64961431eccb5db3e0689535397d
 =======
     return first is second
 >>>>>>> 87768dfbca1b64961431eccb5db3e0689535397d
@@ -51,9 +55,14 @@ def multiple_ints(first_value: int, second_value: int) -> int:
         Product of elements
     """
 <<<<<<< HEAD
+<<<<<<< HEAD
     if type(first_value) != int or type(second_value) != int:
         raise TypeError("One of argumetns are not int ")
 
+=======
+    if not isinstance(first_value, int) or not isinstance(second_value, int):
+        raise TypeError("Input data must be integer")
+>>>>>>> 87768dfbca1b64961431eccb5db3e0689535397d
 =======
     if not isinstance(first_value, int) or not isinstance(second_value, int):
         raise TypeError("Input data must be integer")
@@ -86,17 +95,23 @@ def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
     """
     try:
 <<<<<<< HEAD
+<<<<<<< HEAD
         first_value, second_value = int(first_value), int(second_value)
     except ValueError:
         print("Not valid input data")
     return int(first_value) * int(second_value)
 
 =======
+=======
+>>>>>>> 87768dfbca1b64961431eccb5db3e0689535397d
         first_value = int(first_value)
         second_value = int(second_value)
         return first_value * second_value
     except (ValueError, TypeError):
         raise ValueError("Not valid input data")
+<<<<<<< HEAD
+>>>>>>> 87768dfbca1b64961431eccb5db3e0689535397d
+=======
 >>>>>>> 87768dfbca1b64961431eccb5db3e0689535397d
 
 
@@ -121,12 +136,15 @@ def some_loop_exercise() -> list:
     Use loop to create list that contain int values from 0 to 12 except 6 and 7
     """
 <<<<<<< HEAD
+<<<<<<< HEAD
     result = []
     for x in range(13):
         if x != 6 and x != 7:
             result.append(x)
     return result
 =======
+=======
+>>>>>>> 87768dfbca1b64961431eccb5db3e0689535397d
     return [i for i in range(0, 13) if i != 6 and i != 7]
 
 >>>>>>> 87768dfbca1b64961431eccb5db3e0689535397d
@@ -141,11 +159,15 @@ def remove_from_list_all_negative_numbers(data: List[int]) -> list:
         >>> [1, 5, 8]
     """
 <<<<<<< HEAD
+<<<<<<< HEAD
     result_list = []
     for x in data:
         if x > 0:
             result_list.append(x)
     return result_list
+=======
+    return [i for i in data if i > 0]
+>>>>>>> 87768dfbca1b64961431eccb5db3e0689535397d
 =======
     return [i for i in data if i > 0]
 >>>>>>> 87768dfbca1b64961431eccb5db3e0689535397d
@@ -160,6 +182,7 @@ def alphabet() -> dict:
         >>> {"a": 1, "b": 2 ...}
     """
 <<<<<<< HEAD
+<<<<<<< HEAD
     ott = list(range(1, 27))
 
     abc = []
@@ -173,6 +196,10 @@ def alphabet() -> dict:
     from string import ascii_lowercase
     return dict(enumerate(ascii_lowercase, start=1))
 >>>>>>> 87768dfbca1b64961431eccb5db3e0689535397d
+=======
+    from string import ascii_lowercase
+    return dict(enumerate(ascii_lowercase, start=1))
+>>>>>>> 87768dfbca1b64961431eccb5db3e0689535397d
 
 def simple_sort(data: List[int]) -> List[list]:
     """
@@ -181,6 +208,7 @@ def simple_sort(data: List[int]) -> List[list]:
         simple_sort([2, 9, 6, 7, 3, 2, 1])
         >>> [1, 2, 2, 3, 6, 7, 9]
     """
+<<<<<<< HEAD
 <<<<<<< HEAD
     random = True
     while random:
@@ -193,6 +221,8 @@ def simple_sort(data: List[int]) -> List[list]:
 
     return data
 =======
+=======
+>>>>>>> 87768dfbca1b64961431eccb5db3e0689535397d
     sorted_list = []
     new_data = data.copy()
     while new_data:
@@ -204,4 +234,7 @@ def simple_sort(data: List[int]) -> List[list]:
         new_data.remove(minimum)
 
     return sorted_list
+<<<<<<< HEAD
+>>>>>>> 87768dfbca1b64961431eccb5db3e0689535397d
+=======
 >>>>>>> 87768dfbca1b64961431eccb5db3e0689535397d

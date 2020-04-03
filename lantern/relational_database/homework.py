@@ -1,4 +1,14 @@
 from typing import List
+import psycopg2
+
+connect = psycopg2.connect(
+    database="cursor_db",
+    user="admin",
+    password="12345",
+    host="localhost",
+    port="5432"
+)
+
 
 
 def task_1_add_new_record_to_db(con) -> None:
