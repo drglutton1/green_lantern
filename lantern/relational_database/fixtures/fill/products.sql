@@ -1,4 +1,4 @@
-INSERT INTO Products(ProductName,SupplierID,CategoryID,Unit,Price) VALUES ('Chais',1,1,'10 boxes x 20 bags',18);
+	INSERT INTO Products(ProductName,SupplierID,CategoryID,Unit,Price) VALUES ('Chais',1,1,'10 boxes x 20 bags',18);
 INSERT INTO Products(ProductName,SupplierID,CategoryID,Unit,Price) VALUES ('Chang',1,1,'24 - 12 oz bottles',19);
 INSERT INTO Products(ProductName,SupplierID,CategoryID,Unit,Price) VALUES ('Aniseed Syrup',1,2,'12 - 550 ml bottles','10');
 INSERT INTO Products(ProductName,SupplierID,CategoryID,Unit,Price) VALUES ('Chef Anton''s Cajun Seasoning',2,2,'48 - 6 oz jars',22);
